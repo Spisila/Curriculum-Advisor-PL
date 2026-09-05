@@ -1,3 +1,4 @@
+
 % 1 Período
 disciplina(fundamentos_sistemas_ciberfisicos, obrigatoria, 4, 1).
 disciplina(resolucao_problemas_logica_matematica, obrigatoria, 4, 1).

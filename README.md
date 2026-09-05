@@ -20,11 +20,11 @@ logica/
   - Pelo menos uma cadeia de prerequisitos com profundidade igual ou maior que 3 (D depende de C, que depende de B, que depende de A)
   - Pelo menos 3 Alunos fictícios de teste, com perfis diferentes: um adiantado, um no ritmo normal da grade, e um atrasado ou com histórico de trancamento
 - Camada 2 = Regras de elegibilidade : Deriva a partir dos fatos da Camada 1, o que cada Aluno pode fazer agora, sem olhar para o futuro
-  - prerequisitos_ok(Aluno, Disciplina) : verdadeiro se todos os prerequisitos diretos ja foram cursados
-  - pode_cursar(Aluno, Disciplina) : elegivel e ainda não cursada (usa negação por falha)
-  - Disciplinas_liberadas(Aluno, lista) : todas as Disciplinas que pode_cursar agora, via findall ou setof
-  - Disciplinas_pendentes(Aluno, lista) : todas as obrigatorias ainda nao cursadas, independentemente de elegibilidade
-  - creditos_cursados(Aluno, total) : soma dos creditos de tudo que o Aluno ja cursou
+  - [x] prerequisitos_ok(Aluno, Disciplina) : verdadeiro se todos os prerequisitos diretos ja foram cursados
+  - [x] pode_cursar(Aluno, Disciplina) : elegivel e ainda não cursada (usa negação por falha)
+  - [ ] Disciplinas_liberadas(Aluno, lista) : todas as Disciplinas que pode_cursar agora, via findall ou setof
+  - [ ] Disciplinas_pendentes(Aluno, lista) : todas as obrigatorias ainda nao cursadas, independentemente de elegibilidade
+  - [ ] creditos_cursados(Aluno, total) : soma dos creditos de tudo que o Aluno ja cursou
   (pelo menos um uso correto de \+ (negação por falha))
   (pelo menos um uso correto de forall/ (negação por falha))
   (pelo menos um uso correto de findall/3 ou setof/3 (negação por falha)). Justificar diferença sempre que setof for escolhido
