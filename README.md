@@ -13,16 +13,16 @@ logica/
 └── README.md (como carregar e consultar o projeto)
 
 - Camada 1 = Fatos
-  - Disciplina(Nome, Tipo, Creditos, SemestreSugerido) : Tipo {obrigatoria, eletiva}
-  - prerequisito(Disciplina, prerequisito) : um fato por par Disciplina/prerequisito (uma Disciplina pode ter vários fatos)
-  - cursou(Aluno, Disciplina) : histórico de cada Aluno fictício de teste
-  - No minimo 20 Disciplinas, cobrindo pelo menos 6 semestres sugeridos e incluindo pelo menos 3 eletivas
-  - Pelo menos uma cadeia de prerequisitos com profundidade igual ou maior que 3 (D depende de C, que depende de B, que depende de A)
-  - Pelo menos 3 Alunos fictícios de teste, com perfis diferentes: um adiantado, um no ritmo normal da grade, e um atrasado ou com histórico de trancamento
+  - [x] Disciplina(Nome, Tipo, Creditos, SemestreSugerido) : Tipo {obrigatoria, eletiva}
+  - [x] prerequisito(Disciplina, prerequisito) : um fato por par Disciplina/prerequisito (uma Disciplina pode ter vários fatos)
+  - [x] cursou(Aluno, Disciplina) : histórico de cada Aluno fictício de teste
+  - [x] No minimo 20 Disciplinas, cobrindo pelo menos 6 semestres sugeridos e incluindo pelo menos 3 eletivas
+  - [x] Pelo menos uma cadeia de prerequisitos com profundidade igual ou maior que 3 (D depende de C, que depende de B, que depende de A)
+  - [x] Pelo menos 3 Alunos fictícios de teste, com perfis diferentes: um adiantado, um no ritmo normal da grade, e um atrasado ou com histórico de trancamento
 - Camada 2 = Regras de elegibilidade : Deriva a partir dos fatos da Camada 1, o que cada Aluno pode fazer agora, sem olhar para o futuro
   - [x] prerequisitos_ok(Aluno, Disciplina) : verdadeiro se todos os prerequisitos diretos ja foram cursados
   - [x] pode_cursar(Aluno, Disciplina) : elegivel e ainda não cursada (usa negação por falha)
-  - [ ] Disciplinas_liberadas(Aluno, lista) : todas as Disciplinas que pode_cursar agora, via findall ou setof
+  - [x] Disciplinas_liberadas(Aluno, lista) : todas as Disciplinas que pode_cursar agora, via findall ou setof
   - [ ] Disciplinas_pendentes(Aluno, lista) : todas as obrigatorias ainda nao cursadas, independentemente de elegibilidade
   - [ ] creditos_cursados(Aluno, total) : soma dos creditos de tudo que o Aluno ja cursou
   (pelo menos um uso correto de \+ (negação por falha))

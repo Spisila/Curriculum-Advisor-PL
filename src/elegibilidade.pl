@@ -19,6 +19,10 @@ adicionar_requisito(Disciplina, ListaAtual, ListaFinal) :-
 adicionar_requisito(Disciplina, ListaAtual, ListaAtual) :-
   \+ prerequisito(Disciplina, _).
 
+disciplinas_liberadas(Aluno, Lista) :-
+  findall(Materia, cursou(Aluno, Materia), Lista).
+
+
 % - 1 Pegar lista de materias que o aluno fez
 % - 2 Pegar lista de materias que a disciplina precisa
 % - 3 Checar se os prerequisitos estão na lista de feitas
@@ -26,7 +30,7 @@ adicionar_requisito(Disciplina, ListaAtual, ListaAtual) :-
 prerequisitos_ok(Aluno, Disciplina) :-
   % aluno(Aluno).
   % disciplina(Disciplina).
-  findall(Materia, cursou(Aluno, Materia), MateriasConcluidas),
+  disciplinas_liberadas(Aluno, MateriasConcluidas),
 
   adicionar_requisito(Disciplina, [], ListaRequisitos),
 
@@ -38,13 +42,10 @@ prerequisitos_ok(Aluno, Disciplina) :-
 
 pode_cursar(Aluno, Disciplina) :-
 
-  findall(Materia, cursou(Aluno, Materia), MateriasConcluidas),
+  disciplinas_liberadas(Aluno, MateriasConcluidas),,
     \+ member(Disciplina, MateriasConcluidas),
   prerequisitos_ok(Aluno, Disciplina).
   
-
-
-% - disciplinas_liberadas(Aluno, lista)
 
 
 % - disciplinas_pendentes(Aluno, lista)
