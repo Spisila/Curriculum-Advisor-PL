@@ -47,19 +47,26 @@ somar_creditos([H | T], Soma) :-
 
 
 pode_cursar(Aluno, Disciplina) :-
+
   pegar_disciplinas_cursadas(Aluno, MateriasConcluidas),
-    \+ member(Disciplina, MateriasConcluidas).
-  % prerequisitos_ok(Aluno, Disciplina). Causa ciclo de dependencia infinito.
+    \+ member(Disciplina, MateriasConcluidas),
+  prerequisitos_ok(Aluno, Disciplina).
 
 
-% - Não funcionando corretamente = pode_cursar não checa requisitos_ok.
 disciplinas_liberadas(Aluno, Lista) :-
-  pegar_todas_disciplinas(TodasDisciplinas),
-  findall(Disciplina, (member(Disciplina, TodasDisciplinas), pode_cursar(Aluno, Disciplina)), Lista).
+  disciplinas_pendentes(Aluno, Pendentes),
+  setof(
+    Disciplina, 
+    (
+      member(Disciplina, Pendentes),
+      pode_cursar(Aluno, Disciplina)
+    ), 
+    Lista
+  ).
 
 prerequisitos_ok(Aluno, Disciplina) :-
 
-  disciplinas_liberadas(Aluno, MateriasConcluidas),
+  pegar_disciplinas_cursadas(Aluno, MateriasConcluidas),
   adicionar_requisito(Disciplina, [], ListaRequisitos),
   subset(ListaRequisitos, MateriasConcluidas).
 
@@ -71,9 +78,6 @@ disciplinas_pendentes(Aluno, Lista) :-
 
   subtract(TodasObrigatorias, TodasCursadas, Lista).
 
-
-% - Pegar todas disciplinas cursadas pelo aluno
-% - Pegar credito de cada disciplina e somar
 
 creditos_cursados(Aluno, Total) :-
 
