@@ -22,9 +22,9 @@ logica/
 - Camada 2 = Regras de elegibilidade : Deriva a partir dos fatos da Camada 1, o que cada Aluno pode fazer agora, sem olhar para o futuro
   - [x] prerequisitos_ok(Aluno, Disciplina) : verdadeiro se todos os prerequisitos diretos ja foram cursados
   - [x] pode_cursar(Aluno, Disciplina) : elegivel e ainda não cursada (usa negação por falha)
-  - [x] Disciplinas_liberadas(Aluno, lista) : todas as Disciplinas que pode_cursar agora, via findall ou setof
-  - [ ] Disciplinas_pendentes(Aluno, lista) : todas as obrigatorias ainda nao cursadas, independentemente de elegibilidade
-  - [ ] creditos_cursados(Aluno, total) : soma dos creditos de tudo que o Aluno ja cursou
+  - [ ] Disciplinas_liberadas(Aluno, lista) : todas as Disciplinas que pode_cursar agora, via findall ou setof
+  - [x] Disciplinas_pendentes(Aluno, lista) : todas as obrigatorias ainda nao cursadas, independentemente de elegibilidade
+  - [x] creditos_cursados(Aluno, total) : soma dos creditos de tudo que o Aluno ja cursou
   (pelo menos um uso correto de \+ (negação por falha))
   (pelo menos um uso correto de forall/ (negação por falha))
   (pelo menos um uso correto de findall/3 ou setof/3 (negação por falha)). Justificar diferença sempre que setof for escolhido

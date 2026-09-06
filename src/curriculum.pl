@@ -168,7 +168,74 @@ aluno(murillo).
 aluno(jose).
 aluno(freitas).
 
-%cursou(Aluno, Disciplina).
+% - João cursou apenas o primeiro periodo
+aluno(joao).
+
+% - Pedro cursou tudo até o 7 periodo
+aluno(pedro).
+
+% João
+
+cursou(joao, fundamentos_sistemas_ciberfisicos).
+cursou(joao, resolucao_problemas_logica_matematica).
+cursou(joao, filosofia).
+cursou(joao, experiencia_criativa_navegando_computacao).
+cursou(joao, raciocinio_algoritmico).
+
+% Pedro
+
+cursou(pedro, fundamentos_sistemas_ciberfisicos).
+cursou(pedro, resolucao_problemas_logica_matematica).
+cursou(pedro, filosofia).
+cursou(pedro, experiencia_criativa_navegando_computacao).
+cursou(pedro, raciocinio_algoritmico).
+
+cursou(pedro, resolucao_problemas_natureza_discreta).
+cursou(pedro, arquitetura_banco_dados).
+cursou(pedro, programacao_imperativa).
+cursou(pedro, programacao_web).
+cursou(pedro, conectividade_sistemas_ciberfisicos).
+cursou(pedro, etica).
+
+cursou(pedro, desenvolvendo_jogos_unity).
+cursou(pedro, desenvolvendo_jogos_godot).
+cursou(pedro, computacao_quantica).
+
+cursou(pedro, modelagem_fenomenos_fisicos).
+cursou(pedro, experiencia_criativa_criando_solucoes_computacionais).
+cursou(pedro, programacao_orientada_objetos).
+cursou(pedro, seguranca_informacao).
+cursou(pedro, performance_sistemas_ciberfisicos).
+cursou(pedro, clinica_tic).
+
+cursou(pedro, teologia_sociedade).
+cursou(pedro, resolucao_problemas_estruturados_computacao).
+cursou(pedro, programacao_logica_funcional).
+cursou(pedro, big_data).
+cursou(pedro, sistemas_operacionais_ciberfisicos).
+cursou(pedro, redes_convergentes).
+cursou(pedro, modelagem_sistemas_computacionais).
+
+cursou(pedro, complexidade_algoritmos).
+cursou(pedro, metodos_quantitativos_computacao).
+cursou(pedro, resolucao_problemas_grafos).
+cursou(pedro, metodos_pesquisa_cientifica).
+cursou(pedro, experiencia_criativa_inovando_colaborativamente).
+
+cursou(pedro, aprendizagem_maquina).
+cursou(pedro, inteligencia_artificial).
+cursou(pedro, programacao_distribuida).
+cursou(pedro, gestao_projetos_metodos_ageis).
+cursou(pedro, pesquisa_aplicada).
+cursou(pedro, engenharia_software).
+
+cursou(pedro, construcao_interpretadores).
+cursou(pedro, data_science).
+cursou(pedro, construcao_software_grafico_3d).
+cursou(pedro, cloud_computing).
+cursou(pedro, arquitetura_software).
+cursou(pedro, experiencia_criativa_projeto_transformador_1).
+
 
 % Wilson
 
