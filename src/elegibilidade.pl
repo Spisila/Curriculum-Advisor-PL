@@ -1,8 +1,6 @@
 % Carrega os fatos 
 :- ensure_loaded(curriculum).
 
-% - Ultimo "parametro" de uma "função" é o "retorno" dela
-
 % - Estrutura dos fatos
 
 % - disciplina(nome, obrigatoria/nao, creditos, semestre).
@@ -12,11 +10,11 @@
 % - cursou(aluno, disciplina).
 
 
-adicionar_requisito(Disciplina, ListaAtual, ListaFinal) :-
+pegar_requisitos(Disciplina, ListaAtual, ListaFinal) :-
   prerequisito(Disciplina, Prerequisito),
-  adicionar_requisito(Prerequisito, [Prerequisito | ListaAtual], ListaFinal).
+  pegar_requisitos(Prerequisito, [Prerequisito | ListaAtual], ListaFinal).
 
-adicionar_requisito(Disciplina, ListaAtual, ListaAtual) :-
+pegar_requisitos(Disciplina, ListaAtual, ListaAtual) :-
   \+ prerequisito(Disciplina, _).
 
 
@@ -29,15 +27,16 @@ pegar_disciplinas_obrigatorias(Lista) :-
 pegar_disciplinas_cursadas(Aluno, Lista) :-
   findall(Materia, cursou(Aluno, Materia), Lista).
 
-
 pegar_credito_por_disciplina(Disciplina, Credito) :-
   disciplina(Disciplina, _, Credito, _).
+
 
 pegar_creditos([], ListaFinal, ListaFinal).
 
 pegar_creditos([H | T], ListaInicial, ListaFinal) :-
   pegar_credito_por_disciplina(H, Credito),
   pegar_creditos(T, [Credito | ListaInicial], ListaFinal).
+
 
 somar_creditos([], 0).
 
@@ -52,7 +51,9 @@ pode_cursar(Aluno, Disciplina) :-
     \+ member(Disciplina, MateriasConcluidas),
   prerequisitos_ok(Aluno, Disciplina).
 
-
+% - setof escolhido porque findall acabava colocando a -
+% - mesma disciplina na lista varias vezes ja que -
+% - pode cursar tem varias condições de verdade
 disciplinas_liberadas(Aluno, Lista) :-
   disciplinas_pendentes(Aluno, Pendentes),
   setof(
@@ -67,7 +68,7 @@ disciplinas_liberadas(Aluno, Lista) :-
 prerequisitos_ok(Aluno, Disciplina) :-
 
   pegar_disciplinas_cursadas(Aluno, MateriasConcluidas),
-  adicionar_requisito(Disciplina, [], ListaRequisitos),
+  pegar_requisitos(Disciplina, [], ListaRequisitos),
   subset(ListaRequisitos, MateriasConcluidas).
 
   

@@ -98,3 +98,40 @@ acoes([
 executar([Acao | Resto], EstadoAtual, EstadoFinal) :- 
   acao_possivel(Acao, EstadoAtual, EstadoFinal),
   executar(Resto, EstadoAtual, EstadoFinal).
+
+% Motor de inferencia 
+% Correção
+% Completurode 
+% Decibilidade
+% Alg do prolog = GMP
+
+conecta(curitiba, sao_paulo).
+conecta(sao_paulo, rio_de_janeiro).
+conecta(curitiba, porto_alegre).
+conecta(rio_de_janeiro, salvador).
+
+rota(X, Y) :-
+  conecta(X, Y).
+
+rota(X, Y) :-
+  conecta(X, Z), 
+  rota(Z , Y).
+
+% ?- rota(X, salvador).
+
+% alpha 1 = { Y / salvador }
+% alpha 2 = { X / rio_de_janeiro }
+% alpha 3 = { Z / rio_de_janeiro }
+% alpha 4 = { X / sao_paulo }
+% alpha 5 = { Z / sao_paulo }
+% alpha 6 = { X / curitiba }
+% alpha 7 = { Z / curitiba }
+
+% append([], L, L).
+% append([H|T1], L, [H | T2]) :-
+%   append(T1, L, T2).
+
+% reverse([], []).
+% reverse([H | T], R) :-
+%   reverse(T, RT),
+%   append(RT, [H], R).
