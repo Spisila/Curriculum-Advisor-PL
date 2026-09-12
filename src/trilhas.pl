@@ -16,6 +16,7 @@ prerequisito_transitivo(Disciplina, Ancestral) :-
   prerequisito_transitivo(A, Ancestral).
 
 
-% existe_ciclo(Disciplina) :-
+existe_ciclo(Disciplina) :-
+  prerequisito_transitivo(Disciplina, Disciplina).
 
 % trilha_valida(Aluno, MaxCreditosPorSemestre, Trilha) :-
