@@ -65,11 +65,20 @@ disciplinas_liberadas(Aluno, Lista) :-
     Lista
   ).
 
+% - Checa os pre-requisitos DIRETOS da disciplina, como pede o enunciado.
+% - A cadeia indireta e responsabilidade da Camada 3 (prerequisito_transitivo).
+% - forall/2 exige que TODOS os pre-requisitos tenham sido cursados.
+% - A versao anterior usava pegar_requisitos/3, que desce um ramo da arvore
+% - de pre-requisitos por vez: com backtracking bastava UM ramo completo para
+% - subset/2 ter sucesso, liberando disciplina com pre-requisito faltando
+% - (ex.: pode_cursar(wilson, avaliacao_desempenho_sistemas) dava true mesmo
+% - sem ele ter cursado complexidade_algoritmos).
 prerequisitos_ok(Aluno, Disciplina) :-
 
-  pegar_disciplinas_cursadas(Aluno, MateriasConcluidas),
-  pegar_requisitos(Disciplina, [], ListaRequisitos),
-  subset(ListaRequisitos, MateriasConcluidas).
+  forall(
+    prerequisito(Disciplina, Prerequisito),
+    cursou(Aluno, Prerequisito)
+  ).
 
   
 disciplinas_pendentes(Aluno, Lista) :-
