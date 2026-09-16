@@ -3,10 +3,14 @@
 % Funções utilitarias
 
 pegar_requisitos(Disciplina, ListaAtual, ListaFinal) :-
+
+  disciplina(Disciplina, _, _, _),
+
   prerequisito(Disciplina, Prerequisito),
   pegar_requisitos(Prerequisito, [Prerequisito | ListaAtual], ListaFinal).
 
 pegar_requisitos(Disciplina, ListaAtual, ListaAtual) :-
+  disciplina(Disciplina, _, _, _),
   \+ prerequisito(Disciplina, _).
 
 
@@ -17,6 +21,7 @@ pegar_disciplinas_obrigatorias(Lista) :-
   findall(Disciplina, disciplina(Disciplina, obrigatoria, _, _), Lista).
 
 pegar_disciplinas_cursadas(Aluno, Lista) :-
+  aluno(Aluno),
   findall(Materia, cursou(Aluno, Materia), Lista).
 
 pegar_credito_por_disciplina(Disciplina, Credito) :-
