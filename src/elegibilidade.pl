@@ -49,12 +49,16 @@ pode_cursar(Aluno, Disciplina) :-
   
   aluno(Aluno),
   disciplina(Disciplina, _, _, _),
+
   pegar_disciplinas_cursadas(Aluno, MateriasConcluidas),
     \+ member(Disciplina, MateriasConcluidas),
   prerequisitos_ok(Aluno, Disciplina).
 
 
 disciplinas_liberadas(Aluno, Lista) :-
+
+  aluno(Aluno),
+
   disciplinas_pendentes(Aluno, Pendentes),
   setof(
     Disciplina, 
