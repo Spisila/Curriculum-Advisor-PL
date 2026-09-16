@@ -1,14 +1,6 @@
-% Carrega os fatos 
 :- ensure_loaded(curriculum).
 
-% - Estrutura dos fatos
-
-% - disciplina(nome, obrigatoria/nao, creditos, semestre).
-% - prerequisito(disciplina atual, disciplina anterior).
-% - prerequisito(disciplina atual, disciplina anterior).
-% - aluno(nome).
-% - cursou(aluno, disciplina).
-
+% Funções utilitarias
 
 pegar_requisitos(Disciplina, ListaAtual, ListaFinal) :-
   prerequisito(Disciplina, Prerequisito),
@@ -44,6 +36,7 @@ somar_creditos([H | T], Soma) :-
   somar_creditos(T, SomaMais),
   Soma is H + SomaMais.
 
+% Funções cursadas
 
 pode_cursar(Aluno, Disciplina) :-
   

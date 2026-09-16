@@ -1,9 +1,6 @@
 :- ensure_loaded(elegibilidade).
 
-
-% Pendentes /= [] Caso base (Formatura)
-% LimiteSemestres > 0. Check se limite maior que 0
-% ProximoLimite is LimiteSemestres - 1. Contador de semestres
+% Creditos do curriculo em cada semestre = 26
 
 prerequisito_transitivo(Disciplina, Ancestral) :-
   prerequisito(Disciplina, Ancestral).
@@ -15,7 +12,6 @@ prerequisito_transitivo(Disciplina, Ancestral) :-
 existe_ciclo(Disciplina) :-
   prerequisito_transitivo(Disciplina, Disciplina).
 
-% Limite creditos = 26
 
 % Funções utilitarias
 
