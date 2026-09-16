@@ -21,7 +21,9 @@ pegar_disciplinas_obrigatorias(Lista) :-
   findall(Disciplina, disciplina(Disciplina, obrigatoria, _, _), Lista).
 
 pegar_disciplinas_cursadas(Aluno, Lista) :-
+  
   aluno(Aluno),
+
   findall(Materia, cursou(Aluno, Materia), Lista).
 
 pegar_credito_por_disciplina(Disciplina, Credito) :-
