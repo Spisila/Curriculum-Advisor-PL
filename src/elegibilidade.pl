@@ -68,6 +68,9 @@ disciplinas_liberadas(Aluno, Lista) :-
 
 prerequisitos_ok(Aluno, Disciplina) :-
 
+  aluno(Aluno),
+  disciplina(Disciplina, _, _, _),
+
   forall(
     prerequisito(Disciplina, Prerequisito),
     cursou(Aluno, Prerequisito)
