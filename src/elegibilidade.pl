@@ -46,6 +46,9 @@ somar_creditos([H | T], Soma) :-
 
 
 pode_cursar(Aluno, Disciplina) :-
+  
+  aluno(Aluno),
+  disciplina(Disciplina, _, _, _),
   pegar_disciplinas_cursadas(Aluno, MateriasConcluidas),
     \+ member(Disciplina, MateriasConcluidas),
   prerequisitos_ok(Aluno, Disciplina).
