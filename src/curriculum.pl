@@ -163,15 +163,21 @@ prerequisito(desenvolvendo_jogos_godot, programacao_orientada_objetos).
 prerequisito(computacao_quantica, resolucao_problemas_natureza_discreta).
 
 
+% ALUNOS DE TESTE - perfis propositalmente diferentes
+%
+%   joao    : atrasado        - cursou so o 1 periodo
+%   freitas : atrasado        - 1 periodo completo + 2 periodo incompleto
+%   jose    : com trancamento - esta no 3 periodo, mas ficou devendo tres
+%                               disciplinas do 2 periodo (historico com buraco)
+%   murillo : ritmo normal    - 1 ao 3 periodo completos
+%   wilson  : ritmo normal    - 1 ao 3 periodo completos + 1 eletiva
+%   pedro   : adiantado       - tudo ate o 7 periodo + as 3 eletivas
+
 aluno(wilson).
 aluno(murillo).
 aluno(jose).
 aluno(freitas).
-
-% - João cursou apenas o primeiro periodo
 aluno(joao).
-
-% - Pedro cursou tudo até o 7 periodo
 aluno(pedro).
 
 % João
@@ -284,7 +290,12 @@ cursou(murillo, performance_sistemas_ciberfisicos).
 cursou(murillo, clinica_tic).
 
 
-% Zé
+% Zé - PERFIL COM TRANCAMENTO
+% Chegou ao 3 periodo, mas trancou tres disciplinas do 2 periodo:
+% arquitetura_banco_dados, programacao_web e etica. Nenhuma delas e
+% pre-requisito do que ele cursou depois, entao o historico continua
+% consistente - so tem um buraco no meio, que e exatamente o cenario
+% que o enunciado pede na Camada 1.
 cursou(jose, fundamentos_sistemas_ciberfisicos).
 cursou(jose, resolucao_problemas_logica_matematica).
 cursou(jose, filosofia).
@@ -292,11 +303,8 @@ cursou(jose, experiencia_criativa_navegando_computacao).
 cursou(jose, raciocinio_algoritmico).
 
 cursou(jose, resolucao_problemas_natureza_discreta).
-cursou(jose, arquitetura_banco_dados).
 cursou(jose, programacao_imperativa).
-cursou(jose, programacao_web).
 cursou(jose, conectividade_sistemas_ciberfisicos).
-cursou(jose, etica).
 
 cursou(jose, modelagem_fenomenos_fisicos).
 cursou(jose, experiencia_criativa_criando_solucoes_computacionais).
