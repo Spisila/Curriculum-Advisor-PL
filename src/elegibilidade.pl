@@ -89,6 +89,8 @@ disciplinas_pendentes(Aluno, Lista) :-
 
 creditos_cursados(Aluno, Total) :-
 
+  aluno(Aluno),
+
   pegar_disciplinas_cursadas(Aluno, TodasCursadas),
   pegar_creditos(TodasCursadas, [], TodosCreditos),
   somar_creditos(TodosCreditos, Total).

@@ -26,7 +26,7 @@ logica/
   - [x] Disciplinas_pendentes(Aluno, lista) : todas as obrigatorias ainda nao cursadas, independentemente de elegibilidade
   - [x] creditos_cursados(Aluno, total) : soma dos creditos de tudo que o Aluno ja cursou
   - [x] (pelo menos um uso correto de \+ (negação por falha))
-  - [ ] (pelo menos um uso correto de forall/ (negação por falha))
+  - [x] (pelo menos um uso correto de forall/ (negação por falha))
   - [x] (pelo menos um uso correto de findall/3 ou setof/3 (negação por falha)). Justificar diferença sempre que setof for escolhido
 Camada 3 = Recursão e busca
   - [x] prerequisito_transitivo(Disciplina, ancestral) : fecho transitivo via recursão, todo prerequisito direto ou indireto
