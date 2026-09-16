@@ -79,6 +79,8 @@ prerequisitos_ok(Aluno, Disciplina) :-
   
 disciplinas_pendentes(Aluno, Lista) :-
 
+  aluno(Aluno),
+
   pegar_disciplinas_obrigatorias(TodasObrigatorias),
   pegar_disciplinas_cursadas(Aluno, TodasCursadas),
 
