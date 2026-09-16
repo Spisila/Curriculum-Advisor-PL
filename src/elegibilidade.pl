@@ -57,11 +57,11 @@ pode_cursar(Aluno, Disciplina) :-
 % - mesma disciplina na lista varias vezes ja que -
 % - pode cursar tem varias condições de verdade
 disciplinas_liberadas(Aluno, Lista) :-
-  disciplinas_pendentes(Aluno, Pendentes),
+  pegar_todas_disciplinas(Todas),
   setof(
     Disciplina, 
     (
-      member(Disciplina, Pendentes),
+      member(Disciplina, Todas),
       pode_cursar(Aluno, Disciplina)
     ), 
     Lista
