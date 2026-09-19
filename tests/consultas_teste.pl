@@ -53,3 +53,25 @@
 
 % 80 ?- creditos_cursados(pedro, E).
 % E = 188.
+
+% 81 ?- prerequisito_transitivo(devops, E).  
+% E = cloud_computing ;
+% E = engenharia_software ;
+% E = programacao_distribuida ;
+% E = sistemas_operacionais_ciberfisicos ;
+% E = redes_convergentes ;
+% E = programacao_orientada_objetos ;
+% E = conectividade_sistemas_ciberfisicos ;
+% E = fundamentos_sistemas_ciberfisicos ;
+% E = programacao_imperativa ;
+% E = raciocinio_algoritmico ;
+% E = conectividade_sistemas_ciberfisicos ;
+% E = fundamentos_sistemas_ciberfisicos ;
+% E = programacao_orientada_objetos ;
+% E = programacao_imperativa ;
+% E = raciocinio_algoritmico ;
+% false.
+
+% 82 ?- existe_ciclo(devops).
+% false.
+
