@@ -1,5 +1,7 @@
 % Testes feitos durante desenvolvimento 
 
+% ------- CAMADA 2 ------- 
+
 % 53 ?- pegar_requisitos(devops, A, B).
 % B = [fundamentos_sistemas_ciberfisicos, conectividade_sistemas_ciberfisicos, redes_convergentes, programacao_distribuida, cloud_computing|A] .
 
@@ -54,6 +56,8 @@
 % 80 ?- creditos_cursados(pedro, E).
 % E = 188.
 
+% ------- CAMADA 3 ------- 
+
 % 81 ?- prerequisito_transitivo(devops, E).  
 % E = cloud_computing ;
 % E = engenharia_software ;
@@ -72,11 +76,24 @@
 % E = raciocinio_algoritmico ;
 % false.
 
+% 106 ?- existe_ciclo(devops).
+% false.
+
+% ------- TESTE DE CICLO FEITO NO ciclo_test.pl -------
+
 % 104 ?- existe_ciclo(ciclo_a).
 % true .
 
 % 105 ?- existe_ciclo(ciclo_b).
 % true .
 
-% 106 ?- existe_ciclo(devops).
-% false.
+%107 ?- trilha_valida(jose, 26, T).
+% T = 
+% [
+%   [arquitetura_banco_dados, programacao_web, etica, teologia_sociedade, resolucao_problemas_estruturados_computacao, programacao_logica_funcional, big_data], 
+%   [sistemas_operacionais_ciberfisicos, redes_convergentes, modelagem_sistemas_computacionais, complexidade_algoritmos, metodos_quantitativos_computacao, resolucao_problemas_grafos],
+%   [metodos_pesquisa_cientifica, experiencia_criativa_inovando_colaborativamente,aprendizagem_maquina, inteligencia_artificial, programacao_distribuida, pesquisa_aplicada], 
+%   [gestao_projetos_metodos_ageis, engenharia_software, construcao_interpretadores, data_science, construcao_software_grafico_3d], 
+%   [cloud_computing, arquitetura_software, experiencia_criativa_projeto_transformador_1, processamento_linguagem_natural|…],
+%   [experiencia_criativa_projeto_transformador_2, mundos_virtuais_realidade_misturada, visao_computacional]
+% ] 
