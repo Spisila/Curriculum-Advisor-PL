@@ -72,6 +72,11 @@
 % E = raciocinio_algoritmico ;
 % false.
 
-% 82 ?- existe_ciclo(devops).
-% false.
+% 104 ?- existe_ciclo(ciclo_a).
+% true .
 
+% 105 ?- existe_ciclo(ciclo_b).
+% true .
+
+% 106 ?- existe_ciclo(devops).
+% false.
