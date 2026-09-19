@@ -4,6 +4,7 @@ Este projeto em Prolog modela um currículo acadêmico com disciplinas, pré-req
 
 ## Estrutura do projeto
 
+```
 logica/
 ├── README.md
 ├── docs/
@@ -13,8 +14,9 @@ logica/
 │   ├── elegibilidade.pl
 │   ├── main.pl
 │   └── trilhas.pl
-├── tests/
-│   └── consultas_teste.pl
+└───tests/
+    └── consultas_teste.pl
+```
 
 ## Descrição das pastas
 
