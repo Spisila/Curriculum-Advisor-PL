@@ -172,6 +172,7 @@ prerequisito(computacao_quantica, resolucao_problemas_natureza_discreta).
 %   murillo : ritmo normal    - 1 ao 3 periodo completos
 %   wilson  : ritmo normal    - 1 ao 3 periodo completos + 1 eletiva
 %   pedro   : adiantado       - tudo ate o 7 periodo + as 3 eletivas
+%   leite   : não cursou nada
 
 aluno(wilson).
 aluno(murillo).
@@ -179,6 +180,8 @@ aluno(jose).
 aluno(freitas).
 aluno(joao).
 aluno(pedro).
+
+aluno(leite). 
 
 % João
 

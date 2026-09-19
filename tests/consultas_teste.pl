@@ -1,9 +1,12 @@
 % Testes feitos durante desenvolvimento 
 
-% ------- CAMADA 2 ------- 
+% ------- CAMADA 1 ------- 
 
-% 53 ?- pegar_requisitos(devops, A, B).
-% B = [fundamentos_sistemas_ciberfisicos, conectividade_sistemas_ciberfisicos, redes_convergentes, programacao_distribuida, cloud_computing|A] .
+% 7 ?- findall(Disciplina, disciplina(Disciplina, _, _, 4), E).
+% E = [teologia_sociedade, resolucao_problemas_estruturados_computacao, programacao_logica_funcional, big_data, 
+%      sistemas_operacionais_ciberfisicos, redes_convergentes, modelagem_sistemas_computacionais].
+
+% ------- CAMADA 2 ------- 
 
 % 65 ?- pegar_todas_disciplinas(E).
 % E = [fundamentos_sistemas_ciberfisicos, resolucao_problemas_logica_matematica, filosofia, 
@@ -45,13 +48,17 @@
 % 77 ?- prerequisitos_ok(pedro, devops).
 % true.
 
+% 8 ?- disciplinas_pendentes(jose, E).
+% E = [arquitetura_banco_dados, programacao_web, etica, teologia_sociedade, resolucao_problemas_estruturados_computacao, 
+%      programacao_logica_funcional, big_data, sistemas_operacionais_ciberfisicos, redes_convergentes|…].
+
 % 78 ?- disciplinas_pendentes(pedro, E).
 % E = [processamento_linguagem_natural, devops, avaliacao_desempenho_sistemas, 
 %     xperiencia_criativa_projeto_transformador_2, mundos_virtuais_realidade_misturada, 
 %     visao_computacional].
 
-% 79 ?- creditos_cursados(jose, E).
-% E = 74.
+% 10 ?- creditos_cursados(jose, E).
+% E = 62.
 
 % 80 ?- creditos_cursados(pedro, E).
 % E = 188.
@@ -97,3 +104,16 @@
 %   [cloud_computing, arquitetura_software, experiencia_criativa_projeto_transformador_1, processamento_linguagem_natural|…],
 %   [experiencia_criativa_projeto_transformador_2, mundos_virtuais_realidade_misturada, visao_computacional]
 % ] 
+
+% ------- TESTE trilha_valida do zero -------
+
+% 13 ?- trilha_valida(leite, 26, E).
+% E = [
+%    [fundamentos_sistemas_ciberfisicos, resolucao_problemas_logica_matematica, filosofia, experiencia_criativa_navegando_computacao, raciocinio_algoritmico, etica], 
+%    [resolucao_problemas_natureza_discreta, arquitetura_banco_dados, programacao_imperativa, conectividade_sistemas_ciberfisicos, experiencia_criativa_criando_solucoes_computacionais, clinica_tic], 
+%    [programacao_web, modelagem_fenomenos_fisicos, programacao_orientada_objetos, seguranca_informacao, performance_sistemas_ciberfisicos, teologia_sociedade], 
+%    [resolucao_problemas_estruturados_computacao, programacao_logica_funcional, big_data, sistemas_operacionais_ciberfisicos, redes_convergentes|…], 
+%    [complexidade_algoritmos, metodos_quantitativos_computacao, resolucao_problemas_grafos, metodos_pesquisa_cientifica|…], 
+%    [aprendizagem_maquina, inteligencia_artificial, programacao_distribuida|…], [construcao_interpretadores, data_science|…], 
+%    [processamento_linguagem_natural|…]
+%    ] 

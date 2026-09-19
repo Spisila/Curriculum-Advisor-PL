@@ -44,7 +44,7 @@ No diretório do projeto, abra o SWI-Prolog e carregue os módulos desejados:
 ?- pode_cursar(joao, programacao_imperativa).
 ?- disciplinas_liberadas(joao, Lista).
 ?- creditos_cursados(pedro, Total).
-?- trilha_valida(joao, 12, Trilha).
+?- trilha_valida(jose, 24, Trilha).
 ```
 
 ## Objetivo
