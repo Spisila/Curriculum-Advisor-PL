@@ -2,18 +2,6 @@
 
 % Funções utilitarias
 
-pegar_requisitos(Disciplina, ListaAtual, ListaFinal) :-
-
-  disciplina(Disciplina, _, _, _),
-
-  prerequisito(Disciplina, Prerequisito),
-  pegar_requisitos(Prerequisito, [Prerequisito | ListaAtual], ListaFinal).
-
-pegar_requisitos(Disciplina, ListaAtual, ListaAtual) :-
-  disciplina(Disciplina, _, _, _),
-  \+ prerequisito(Disciplina, _).
-
-
 pegar_todas_disciplinas(Lista) :-
   findall(Disciplina, disciplina(Disciplina, _, _, _), Lista).
 
