@@ -32,10 +32,9 @@
 % 73 ?- pode_cursar(jose, teologia_sociedade).
 % true.
 
-% 74 ?- disciplinas_liberadas(jose, E).
-% E = [big_data, construcao_software_grafico_3d, engenharia_software, experiencia_criativa_inovando_colaborativamente, 
-%     metodos_pesquisa_cientifica, metodos_quantitativos_computacao, modelagem_sistemas_computacionais, 
-%     programacao_logica_funcional, redes_convergentes|…].
+% 15 ?- disciplinas_liberadas(jose, E).
+% E = [arquitetura_banco_dados, computacao_quantica, construcao_software_grafico_3d, desenvolvendo_jogos_godot, desenvolvendo_jogos_unity, 
+%     engenharia_software, etica, experiencia_criativa_inovando_colaborativamente, metodos_pesquisa_cientifica|…].
 
 % O aluno Pedro cursou tudo até o 7 semestre.
 % 75 ?- disciplinas_liberadas(pedro, E).
