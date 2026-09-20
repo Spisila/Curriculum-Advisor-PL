@@ -91,6 +91,7 @@
 %Função principal
 
   trilha_valida(Aluno, MaxCreditosPorSemestre, Trilha) :-
+    aluno(Aluno),
     pegar_disciplinas_cursadas(Aluno, CursadasIniciais),
     gerar_semestres(CursadasIniciais, MaxCreditosPorSemestre, 12, Trilha).
 
