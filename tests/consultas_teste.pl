@@ -29,7 +29,7 @@
 % 72 ?- pode_cursar(jose, devops).
 % false.
 
-% 73 ?- pode_cursar(jose, teologia_sociedade).
+% 34 ?- pode_cursar(jose, programacao_logica_funcional).
 % true.
 
 % 15 ?- disciplinas_liberadas(jose, E).
