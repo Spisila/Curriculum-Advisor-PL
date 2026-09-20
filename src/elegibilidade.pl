@@ -20,6 +20,7 @@ pegar_credito_por_disciplina(Disciplina, Credito) :-
 
 pegar_creditos([], ListaFinal, ListaFinal).
 
+% Pessa lista de disciplinas, pega credito da head e adiciona a outra lista
 pegar_creditos([H | T], ListaInicial, ListaFinal) :-
   pegar_credito_por_disciplina(H, Credito),
   pegar_creditos(T, [Credito | ListaInicial], ListaFinal).
@@ -27,11 +28,22 @@ pegar_creditos([H | T], ListaInicial, ListaFinal) :-
 
 somar_creditos([], 0).
 
+% Passoa lista de creditos e soma todos eles
 somar_creditos([H | T], Soma) :-
   somar_creditos(T, SomaMais),
   Soma is H + SomaMais.
 
 % Funções cursadas
+
+prerequisitos_ok(Aluno, Disciplina) :-
+
+  aluno(Aluno),
+  disciplina(Disciplina, _, _, _),
+
+  forall(
+    prerequisito(Disciplina, Prerequisito),
+    cursou(Aluno, Prerequisito)
+  ).
 
 pode_cursar(Aluno, Disciplina) :-
   
@@ -55,17 +67,6 @@ disciplinas_liberadas(Aluno, Lista) :-
       pode_cursar(Aluno, Disciplina)
     ), 
     Lista
-  ).
-
-
-prerequisitos_ok(Aluno, Disciplina) :-
-
-  aluno(Aluno),
-  disciplina(Disciplina, _, _, _),
-
-  forall(
-    prerequisito(Disciplina, Prerequisito),
-    cursou(Aluno, Prerequisito)
   ).
 
   
