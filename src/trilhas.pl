@@ -3,15 +3,18 @@
 % Creditos do curriculo em cada semestre = 26
 
   prerequisito_transitivo(Disciplina, Ancestral) :-
+    prerequisito_transitivo(Disciplina, Ancestral, [Disciplina]).
+
+  prerequisito_transitivo(Disciplina, Ancestral, _) :-
     prerequisito(Disciplina, Ancestral).
 
-  prerequisito_transitivo(Disciplina, Ancestral) :-
+  prerequisito_transitivo(Disciplina, Ancestral, Visitados) :-
     prerequisito(Disciplina, A),
-    prerequisito_transitivo(A, Ancestral).
+    \+ member(A, Visitados),
+    prerequisito_transitivo(A, Ancestral, [A | Visitados]).
 
   existe_ciclo(Disciplina) :-
     prerequisito_transitivo(Disciplina, Disciplina).
-
 
 % Funções utilitarias
 
@@ -80,6 +83,10 @@
     
     Pendentes \= [],           % Pendentes != [], ainda existem materias pendentes
 
+    pegar_creditos(Pendentes, [], CreditosPendentes),
+    somar_creditos(CreditosPendentes, CreditosFaltando),
+    CreditosFaltando =< LimiteSemestres * MaxCreditos,
+
     montar_semestre(Cursadas, MaxCreditos, Semestre),
     
     append(Cursadas, Semestre, NovasCursadas),
@@ -92,16 +99,16 @@
 
   trilha_valida(Aluno, MaxCreditosPorSemestre, Trilha) :-
     aluno(Aluno),
+    integer(MaxCreditosPorSemestre),
+    MaxCreditosPorSemestre > 0,
     pegar_disciplinas_cursadas(Aluno, CursadasIniciais),
+    pegar_pendentes(CursadasIniciais, Pendentes),
+
+    % Nenhuma disciplina pendente pode estar presa num ciclo:
+    % se estiver, ela nunca fica elegivel e nao existe trilha.
+    forall(
+      member(Disciplina, Pendentes),
+      \+ existe_ciclo(Disciplina)
+    ),
+
     gerar_semestres(CursadasIniciais, MaxCreditosPorSemestre, 12, Trilha).
-
-
-
-
-
-
-
-
-
-
-
